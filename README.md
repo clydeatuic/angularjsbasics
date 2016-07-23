@@ -111,7 +111,9 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 });
 ```
 * Experiments
+
 >Add another binding to index.html. For example:
+
 ```<p>Total number of phones: {{phones.length}}</p>```
 
 >Create a new model property in the controller and bind to it from the template. For example:
@@ -123,4 +125,5 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 ```<p>Hello, {{name}}!</p>```
 
 >Refresh your browser and verify that it says "Hello, World!".
+
 >__SUMMARY__: You now have a dynamic app that features separate model, view, and controller components
