@@ -75,7 +75,7 @@ Try adding more static HTML to index.html. For example:
 
 	The view component is constructed by Angular from this template. ```app/index.html:```
     
-``` html
+```html
 <html ng-app="phonecatApp">
 	<head>
       ...
@@ -110,13 +110,16 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 });
 ```
 * Experiments
-	* Add another binding to index.html. For example:
-	```<p>Total number of phones: {{phones.length}}</p>```
-	* Create a new model property in the controller and bind to it from the template. For example:
+* Add another binding to index.html. For example:
+```<p>Total number of phones: {{phones.length}}</p>```
+
+* Create a new model property in the controller and bind to it from the template. For example:
 	
-    ```$scope.name = "World";```
-	* Then add a new binding to index.html:
+```$scope.name = "World";```
+
+* Then add a new binding to index.html:
 	
-    ```<p>Hello, {{name}}!</p>```
-	* Refresh your browser and verify that it says "Hello, World!".
+```<p>Hello, {{name}}!</p>```
+
+* Refresh your browser and verify that it says "Hello, World!".
 * __SUMMARY__: You now have a dynamic app that features separate model, view, and controller components
