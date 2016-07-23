@@ -94,9 +94,9 @@ Try adding more static HTML to index.html. For example:
 ```
     
 :+1: Model and Controller. 
->The data model (a simple array of phones in object literal notation) is now instantiated within the ```PhoneListCtrl``` controller. The controller is simply a constructor function that takes a ```$scope``` parameter. 
-```app/js/controllers.js:```
-``` js
+>The data model (a simple array of phones in object literal notation) is now instantiated within the ```PhoneListCtrl``` controller. The controller is simply a constructor function that takes a ```$scope``` parameter. ```app/js/controllers.js:```
+
+``` javascript
 var phonecatApp = angular.module('phonecatApp', []);
 
 phonecatApp.controller('PhoneListCtrl', function ($scope) {
