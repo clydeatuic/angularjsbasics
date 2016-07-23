@@ -5,16 +5,19 @@
   ```
 * For complete tutorial: [AngularJS PhoneCatApp](https://code.angularjs.org/1.2.28/docs/tutorial)
 
+* The project is preconfigured with a number of npm helper scripts to make it easy to run the common tasks that you will need while developing:
+
+```$ npm start : start a local development web-server```
 ## Steps
->1. Download Angular Phonecat
+:+1: Download Angular Phonecat
 ```
 $ git clone https://github.com/clydeatuic/angular-phonecat.git
 ```
->2. Change your current directory to ```angular-phonecat```.
+:+1: Change your current directory to ```angular-phonecat```.
 ```
 $ cd angular-phonecat
 ```
->3. The HTML page that displays "Nothing here yet!" was constructed with the HTML code shown below. The code contains some key Angular elements that we will need as we progress.
+:+1: The HTML page that displays "Nothing here yet!" was constructed with the HTML code shown below. The code contains some key Angular elements that we will need as we progress.
 
 ```app/index.html:```
 ``` html
@@ -34,15 +37,15 @@ $ cd angular-phonecat
 </body>
 </html>
 ```
->4. Try adding a new expression to the ```index.html``` that will do some math:
+:+1: Try adding a new expression to the ```index.html``` that will do some math:
 ```
 <p>1 + 2 = {{ 1 + 2 }}</p>
 ```
->5. In order to illustrate how Angular enhances standard HTML, you will create a purely static HTML page and then examine how we can turn this HTML code into a template that Angular will use to dynamically display the same result with any set of data.
+:+1: In order to illustrate how Angular enhances standard HTML, you will create a purely static HTML page and then examine how we can turn this HTML code into a template that Angular will use to dynamically display the same result with any set of data.
 
-	* In this step you will add some basic information about two cell phones to an HTML page.
+>In this step you will add some basic information about two cell phones to an HTML page.
 
-	* The page now contains a list with information about two phones.
+>The page now contains a list with information about two phones.
 	
 ```app/index.html:```
 ``` html
@@ -64,11 +67,11 @@ $ cd angular-phonecat
 Try adding more static HTML to index.html. For example:
 ```<p>Total number of phones: 2</p>```
 
-Now it's time to make the web page dynamic — with AngularJS. We'll also add a test that verifies the code for the controller we are going to add.
+>Now it's time to make the web page dynamic — with AngularJS. We'll also add a test that verifies the code for the controller we are going to add.
 
-There are many ways to structure the code for an application. For Angular apps, we encourage the use of the Model-View-Controller (MVC) design pattern to decouple the code and to separate concerns. With that in mind, let's use a little Angular and JavaScript to add model, view, and controller components to our app. The list of three phones is now generated dynamically from data
+>There are many ways to structure the code for an application. For Angular apps, we encourage the use of the Model-View-Controller (MVC) design pattern to decouple the code and to separate concerns. With that in mind, let's use a little Angular and JavaScript to add model, view, and controller components to our app. The list of three phones is now generated dynamically from data
 
->6. View and Template. In Angular, the view is a projection of the model through the HTML template. This means that whenever the model changes, Angular refreshes the appropriate binding points, which updates the view.
+:+1: View and Template. In Angular, the view is a projection of the model through the HTML template. This means that whenever the model changes, Angular refreshes the appropriate binding points, which updates the view.
 
 	The view component is constructed by Angular from this template. ```app/index.html:```
     
@@ -90,7 +93,8 @@ There are many ways to structure the code for an application. For Angular apps, 
   </html>
 ```
     
->7. Model and Controller. The data model (a simple array of phones in object literal notation) is now instantiated within the ```PhoneListCtrl``` controller. The controller is simply a constructor function that takes a ```$scope``` parameter. ```app/js/controllers.js:```
+:+1: Model and Controller. 
+>The data model (a simple array of phones in object literal notation) is now instantiated within the ```PhoneListCtrl``` controller. The controller is simply a constructor function that takes a ```$scope``` parameter. ```app/js/controllers.js:```
 ``` js
 var phonecatApp = angular.module('phonecatApp', []);
 
@@ -115,4 +119,4 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 	
     ```<p>Hello, {{name}}!</p>```
 	* Refresh your browser and verify that it says "Hello, World!".
->* __SUMMARY__: You now have a dynamic app that features separate model, view, and controller components
+* __SUMMARY__: You now have a dynamic app that features separate model, view, and controller components
