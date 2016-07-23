@@ -116,10 +116,3 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
     ```<p>Hello, {{name}}!</p>```
 	* Refresh your browser and verify that it says "Hello, World!".
 * __SUMMARY__: You now have a dynamic app that features separate model, view, and controller components
-
-
-
-
-
-
-
