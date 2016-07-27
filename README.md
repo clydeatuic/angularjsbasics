@@ -295,6 +295,53 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 });
 ```
 
+:+1: Enough of building an app with three phones in a hard-coded dataset! Let's fetch a larger dataset from our server using one of Angular's built-in services called $http. We will use Angular's dependency injection (DI) to provide the service to the PhoneListCtrl controller.
+
+:+1: Data. ```The app/phones/phones.json``` file in your project is a dataset that contains a larger list of phones stored in the JSON format.
+
+Following is a sample of the file:
+
+
+``` javascript
+[
+{
+ "age": 13,
+ "id": "motorola-defy-with-motoblur",
+ "name": "Motorola DEFY\u2122 with MOTOBLUR\u2122",
+ "snippet": "Are you ready for everything life throws your way?"
+ ...
+},
+...
+]
+
+```
+
+:+1: Controller. We'll use Angular's ```$http``` service in our controller to make an HTTP request to your web server to fetch the data in the ```app/phones/phones.json``` file. ```$http``` is just one of several built-in ```Angular services``` that handle common operations in web apps. Angular injects these services for you where you need them.
+
+>Services are managed by Angular's DI subsystem. Dependency injection helps to make your web apps both well-structured (e.g., separate components for presentation, data, and control) and loosely coupled (dependencies between components are not resolved by the components themselves, but by the DI subsystem).
+
+``` app/js/controllers.js: ```
+
+``` javascript
+var phonecatApp = angular.module('phonecatApp', []);
+
+phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {
+  $http.get('phones/phones.json').success(function(data) {
+    $scope.phones = data;
+  });
+
+  $scope.orderProp = 'age';
+});
+```
+
+:+1: There is now a list of 20 phones, loaded from the server.
+
+
+
+>SUMMARY: Now that you have learned how easy it is to use Angular services (thanks to Angular's dependency injection)
+
+![End of Part 3](https://github.com/clydeatuic/angularjsbasics/blob/master/part3.png)
+
 :tada: You have already finished third part.
 
 ## Steps - Part 4
