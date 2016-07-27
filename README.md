@@ -1,8 +1,4 @@
 ## Steps
-:+1: Verify Node version
-  ```
-  $ node -v
-  ```
 :+1: Download Angular Phonecat
 ```
 $ git clone --depth=14 https://github.com/angular/angular-phonecat.git
@@ -11,9 +7,27 @@ $ git clone --depth=14 https://github.com/angular/angular-phonecat.git
 ```
 $ cd angular-phonecat
 ```
+:+1: Verify Node version
+```
+$ node -v
+```
+:+1: Once you have Node.js installed on your machine you can download the tool dependencies by running: (Note: This might take a while to download all dependencies, it depends on your internet connection)
+```
+$ npm install
+```
+:+1: Running Development Web Server
+```
+$ npm start
+```
+:+1: This will create a local webserver that is listening to port 8000 on your local machine. You can now browse to the application at:
+```
+http://localhost:8000/app/index.html
+```
+:+1: Navigate to ``` angular-phonecat ``` directory and modify the ``` index.html ```
+```
+app/index.html:
+```
 :+1: The HTML page that displays "Nothing here yet!" was constructed with the HTML code shown below. The code contains some key Angular elements that we will need as we progress.
-
-```app/index.html:```
 ``` html
 <!doctype html>
 <html lang="en" ng-app>
