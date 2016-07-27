@@ -1,4 +1,4 @@
-## AngularJS Basics
+## AngularJS Basics Updated Version
 * Verify Node version
   ```
   $ node -v
