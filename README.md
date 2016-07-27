@@ -161,6 +161,140 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 
 >__SUMMARY__: You now have a dynamic app that features separate model, view, and controller components
 
+:+1: Experiments: Create a repeater in ```index.html``` that constructs a simple table:
+
+``` html
+<table>
+  <tr><th>row number</th></tr>
+  <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{i}}</td></tr>
+</table>
+```
+
+:tada: You have already finished second part.
+
+## Steps - Part 3
+
+>We did a lot of work in laying a foundation for the app in the last step, so now we'll do something simple; we will add full text search (yes, it will be simple!). 
+
+>We made no changes to the controller.
+
+:+1: Template. We added a standard HTML ```<input>``` tag and used Angular's filter function to process the input for the ```ngRepeat``` directive.
+
+```app/index.html:```
+
+``` html
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  ... same codes here
+
+</head>
+<body ng-controller="PhoneListCtrl">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <!--Sidebar content-->
+
+          Search: <input ng-model="query">
+
+        </div>
+        <div class="col-md-10">
+          <!--Body content-->
+
+          <ul class="phones">
+            <li ng-repeat="phone in phones | filter:query">
+              {{phone.name}}
+              <p>{{phone.snippet}}</p>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+```
+
+>Refresh the page. The app now has a search box. Notice that the phone list on the page changes depending on what a user types into the search box.
+
+:+1: In this step, you will add a feature to let your users control the order of the items in the phone list. The dynamic ordering is implemented by creating a new model property, wiring it together with the repeater, and letting the data binding magic do the rest of the work. 
+
+:+1: Template. We made the following changes to the index.html template:
+
+```app/index.html:```
+
+``` html
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  ... same codes here
+
+</head>
+<body ng-controller="PhoneListCtrl">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <!--Sidebar content-->
+
+          Search: <input ng-model="query">
+            Sort by:
+            <select ng-model="orderProp">
+              <option value="name">Alphabetical</option>
+              <option value="age">Newest</option>
+            </select>
+
+        </div>
+        <div class="col-md-10">
+          <!--Body content-->
+
+          <ul class="phones">
+              <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+                <span>{{phone.name}}</span>
+                <p>{{phone.snippet}}</p>
+              </li>
+            </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+```
+
+>Angular creates a two way data-binding between the select element and the orderProp model. orderProp is then used as the input for the orderBy filter.
+
+:+1: Controller. This is a good time to talk about two-way data-binding. Notice that when the app is loaded in the browser, "Newest" is selected in the drop down menu. This is because we set orderProp to 'age' in the controller. So the binding works in the direction from our model to the UI. Now if you select "Alphabetically" in the drop down menu, the model will be updated as well and the phones will be reordered. That is the data-binding doing its job in the opposite direction — from the UI to the model.
+
+```app/js/controllers.js:```
+
+``` javascript
+var phonecatApp = angular.module('phonecatApp', []);
+
+phonecatApp.controller('PhoneListCtrl', function ($scope) {
+  $scope.phones = [
+    {'name': 'Nexus S',
+     'snippet': 'Fast just got faster with Nexus S.',
+     'age': 1},
+    {'name': 'Motorola XOOM™ with Wi-Fi',
+     'snippet': 'The Next, Next Generation tablet.',
+     'age': 2},
+    {'name': 'MOTOROLA XOOM™',
+     'snippet': 'The Next, Next Generation tablet.',
+     'age': 3}
+  ];
+
+  $scope.orderProp = 'age';
+});
+```
+
+:tada: You have already finished third part.
+
+## Steps - Part 4
+
 ## AngularJS Basics Original Link
 * For complete tutorial: [AngularJS PhoneCatApp](https://code.angularjs.org/1.2.28/docs/tutorial)
 
