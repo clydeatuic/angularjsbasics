@@ -389,6 +389,170 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {
 
 :tada: You have already finished fourth part.
 
+## Steps - Part 5
+
+:+1: In this step, you will learn how to create a layout template and how to build an app that has multiple views by adding routing, using an Angular module called 'ngRoute'.
+
+>Dependencies. Update the dependencies, this time we use bower package to update them. Modify the ```bower.json``` with the following script:
+
+``` bower.json ```
+
+``` javascript
+{
+"name": "angular-phonecat",
+"description": "A starter project for AngularJS",
+"version": "0.0.0",
+"homepage": "https://github.com/angular/angular-phonecat",
+"license": "MIT",
+"private": true,
+"dependencies": {
+  "angular": "1.5.x",
+  "angular-mocks": "~1.5.x",
+  "jquery": "1.10.x",
+  "bootstrap": "~3.3.1",
+  "angular-route": "~1.5.x"
+}
+}
+```
+
+:+1: Stop the server by hitting ```CTRL-C``` then Run ```bower install``` but for this project we have preconfigured npm to run bower install for us, therefor just simply type:
+
+```
+$ npm install
+```
+
+>For more details, see [Routing & Multiple Views](https://code.angularjs.org/1.2.28/docs/tutorial/step_07)
+
+:+1: Template. The ```$route``` service is usually used in conjunction with the ```ngView``` directive. The role of the ```ngView``` directive is to include the view template for the current route into the layout template. This makes it a perfect fit for our ```index.html``` template.
+
+``` app/index.html: ```
+
+``` html
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+
+</head>
+<body>
+
+  <div ng-view></div>
+
+</body>
+</html>
+```
+
+:+1: Note that we removed most of the code in the index.html template and replaced it with a single line containing a div with the ng-view attribute. The code that we removed was placed into the phone-list.html template:
+
+>Create a ```partials``` folder inside the ```app``` directory.
+
+``` app/parials/phone-list.html :```
+
+``` html
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-2">
+    <!--Sidebar content-->
+
+    Search: <input ng-model="query">
+    Sort by:
+    <select ng-model="orderProp">
+      <option value="name">Alphabetical</option>
+      <option value="age">Newest</option>
+    </select>
+
+  </div>
+  <div class="col-md-10">
+    <!--Body content-->
+
+    <ul class="phones">
+      <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+        <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+        <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+        <p>{{phone.snippet}}</p>
+      </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+```
+
+>We also added a placeholder template for the phone details view:
+
+```app/partials/phone-detail.html:```
+
+``` html
+<span>{{phoneId}}</span>
+```
+
+:=1: App Module. To improve the organization of the app, we are making use of Angular's ```ngRoute``` module and we've moved the controllers into their own module ```phonecatControllers``` (as shown below).
+
+>We added ```angular-route.js``` to ```index.html``` and created a new ```phonecatControllers``` module in ```controllers.js```. That's not all we need to do to be able to use their code, however. We also have to add the modules as dependencies of our app. By listing these two modules as dependencies of ```phonecatApp```, we can use the directives and services they provide.
+
+``` app/js/app.js ```
+
+``` javascript
+var phonecatApp = angular.module('phonecatApp', [
+'ngRoute',
+'phonecatControllers'
+]);
+
+phonecatApp.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/phones', {
+        templateUrl: 'partials/phone-list.html',
+        controller: 'PhoneListCtrl'
+      }).
+      when('/phones/:phoneId', {
+        templateUrl: 'partials/phone-detail.html',
+        controller: 'PhoneDetailCtrl'
+      }).
+      otherwise({
+        redirectTo: '/phones'
+      });
+  }]);
+```
+
+:+1: Controllers. Again, note that we created a new module called ```phonecatControllers```. For small AngularJS applications, it's common to create just one module for all of your controllers if there are just a few. As your application grows it is quite common to refactor your code into additional modules. For larger apps, you will probably want to create separate modules for each major feature of your app.
+
+``` app/js/controllers.js ```
+
+``` javascript
+var phonecatControllers = angular.module('phonecatControllers', []);
+
+phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
+  function ($scope, $http) {
+    $http.get('phones/phones.json').success(function(data) {
+      $scope.phones = data;
+    });
+
+    $scope.orderProp = 'age';
+  }]);
+
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
+  function($scope, $routeParams) {
+    $scope.phoneId = $routeParams.phoneId;
+  }]);
+```
+
+>When you now navigate to app/index.html, you are redirected to app/index.html/#/phones and the phone list appears in the browser.
+
+>When you click on a phone link the url changes to one specific to that phone and the stub of a phone detail page is displayed.
+
+![End of Part 5](https://github.com/clydeatuic/angularjsbasics/blob/master/part5.png)
+
+:tada: You have already finished fifth part.
+
 ## AngularJS Basics Original Link
 * For complete tutorial: [AngularJS PhoneCatApp](https://code.angularjs.org/1.2.28/docs/tutorial)
 
