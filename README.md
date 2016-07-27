@@ -724,6 +724,8 @@ body {
 
 :tada: You have already finished sixth part.
 
+## Steps - Part 7 & 8 (working...)
+
 ## AngularJS Basics Original Link
 * For complete tutorial: [AngularJS PhoneCatApp](https://code.angularjs.org/1.2.28/docs/tutorial)
 
