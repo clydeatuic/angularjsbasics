@@ -131,7 +131,7 @@ Try adding more static HTML to index.html. For example:
 :+1: Model and Controller. The data model (a simple array of phones in object literal notation) is now instantiated within the ```PhoneListCtrl``` controller. The controller is simply a constructor function that takes a ```$scope``` parameter. 
 >If you don't have ```js``` folder inside ```app/``` kindly create ```controllers.js``` one.
 
-```app/js/controllers.js:```
+``` app/js/controllers.js: ```
 
 ``` javascript
 var phonecatApp = angular.module('phonecatApp', []);
