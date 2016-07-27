@@ -104,25 +104,33 @@ Try adding more static HTML to index.html. For example:
 ``` app/index.html: ```
     
 ``` html
-<html ng-app="phonecatApp">
-	<head>
-      ...
-      <script src="bower_components/angular/angular.js"></script>
-      <script src="js/controllers.js"></script>
-    </head>
-    <body ng-controller="PhoneListCtrl">
-      <ul>
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular/angular.js"></script>
+
+  <script src="js/controllers.js"></script>
+  
+</head>
+<body ng-controller="PhoneListCtrl">
+
+    <ul>
       <li ng-repeat="phone in phones">
-      {{phone.name}}
-      <p>{{phone.snippet}}</p>
+        {{phone.name}}
+        <p>{{phone.snippet}}</p>
       </li>
-      </ul>
+    </ul>
   </body>
-  </html>
+</html>
 ```
     
-:+1: Model and Controller. 
->The data model (a simple array of phones in object literal notation) is now instantiated within the ```PhoneListCtrl``` controller. The controller is simply a constructor function that takes a ```$scope``` parameter. ```app/js/controllers.js:```
+:+1: Model and Controller. The data model (a simple array of phones in object literal notation) is now instantiated within the ```PhoneListCtrl``` controller. The controller is simply a constructor function that takes a ```$scope``` parameter. 
+>If you don't have ```js``` folder inside ```app/``` kindly create ```controllers.js``` one.
+```app/js/controllers.js:```
 
 ``` javascript
 var phonecatApp = angular.module('phonecatApp', []);
