@@ -157,6 +157,8 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 
 :+1: Refresh your browser and verify that it says "Hello, World!".
 
+![End of Part 2](https://github.com/clydeatuic/angularjsbasics/blob/master/part2.png)
+
 >__SUMMARY__: You now have a dynamic app that features separate model, view, and controller components
 
 ## AngularJS Basics Original Link
