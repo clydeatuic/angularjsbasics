@@ -85,7 +85,11 @@ Nothing here yet!
 </ul>
 ```
 Try adding more static HTML to index.html. For example:
-```<p>Total number of phones: 2</p>```
+``` <p>Total number of phones: 2</p> ```
+
+![End of Part 1](https://github.com/clydeatuic/angularjsbasics/blob/master/part1.png)
+
+:tada: You have already finished the first part.
 
 >Now it's time to make the web page dynamic — with AngularJS. We'll also add a test that verifies the code for the controller we are going to add.
 
