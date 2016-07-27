@@ -1,4 +1,4 @@
-## Steps
+## Steps - Part 1
 :+1: Download Angular Phonecat
 ```
 $ git clone --depth=14 https://github.com/angular/angular-phonecat.git
@@ -91,15 +91,17 @@ Try adding more static HTML to index.html. For example:
 
 :tada: You have already finished the first part.
 
->Now it's time to make the web page dynamic — with AngularJS. We'll also add a test that verifies the code for the controller we are going to add.
+## Steps - Part 2
+
+:+1: Now it's time to make the web page dynamic — with AngularJS. We'll also add a test that verifies the code for the controller we are going to add.
 
 >There are many ways to structure the code for an application. For Angular apps, we encourage the use of the Model-View-Controller (MVC) design pattern to decouple the code and to separate concerns. With that in mind, let's use a little Angular and JavaScript to add model, view, and controller components to our app. The list of three phones is now generated dynamically from data
 
 :+1: View and Template. In Angular, the view is a projection of the model through the HTML template. This means that whenever the model changes, Angular refreshes the appropriate binding points, which updates the view.
 
-	The view component is constructed by Angular from this template. ```app/index.html:```
+	The view component is constructed by Angular from this template. ``` app/index.html: ```
     
-```html
+``` html
 <html ng-app="phonecatApp">
 	<head>
       ...
