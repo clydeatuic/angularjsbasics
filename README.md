@@ -67,7 +67,7 @@ Nothing here yet!
 
 >The page now contains a list with information about two phones.
 	
-```app/index.html:```
+``` app/index.html: ```
 ``` html
 <ul>
   <li>
