@@ -496,7 +496,7 @@ $ npm install
 <span>{{phoneId}}</span>
 ```
 
-:=1: App Module. To improve the organization of the app, we are making use of Angular's ```ngRoute``` module and we've moved the controllers into their own module ```phonecatControllers``` (as shown below).
+:+1: App Module. To improve the organization of the app, we are making use of Angular's ```ngRoute``` module and we've moved the controllers into their own module ```phonecatControllers``` (as shown below).
 
 >We added ```angular-route.js``` to ```index.html``` and created a new ```phonecatControllers``` module in ```controllers.js```. That's not all we need to do to be able to use their code, however. We also have to add the modules as dependencies of our app. By listing these two modules as dependencies of ```phonecatApp```, we can use the directives and services they provide.
 
@@ -550,6 +550,8 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
 >When you now navigate to app/index.html, you are redirected to app/index.html/#/phones and the phone list appears in the browser.
 
 >When you click on a phone link the url changes to one specific to that phone and the stub of a phone detail page is displayed.
+
+>Run the server again. ``` $ npm start ```
 
 ![End of Part 5](https://github.com/clydeatuic/angularjsbasics/blob/master/part5.png)
 
