@@ -488,7 +488,9 @@ $ npm install
 
 >We also added a placeholder template for the phone details view:
 
-```app/partials/phone-detail.html:```
+
+``` app/partials/phone-detail.html : ```
+
 
 ``` html
 <span>{{phoneId}}</span>
