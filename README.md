@@ -11,7 +11,7 @@
 ## Steps
 :+1: Download Angular Phonecat
 ```
-$ git clone https://github.com/clydeatuic/angular-phonecat.git
+$ git clone --depth=14 https://github.com/angular/angular-phonecat.git
 ```
 :+1: Change your current directory to ```angular-phonecat```.
 ```
