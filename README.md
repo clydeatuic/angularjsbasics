@@ -1,14 +1,8 @@
-## AngularJS Basics Updated Version
-* Verify Node version
+## Steps
+:+1: Verify Node version
   ```
   $ node -v
   ```
-* For complete tutorial: [AngularJS PhoneCatApp](https://code.angularjs.org/1.2.28/docs/tutorial)
-
-* The project is preconfigured with a number of npm helper scripts to make it easy to run the common tasks that you will need while developing:
-
-```$ npm start : start a local development web-server```
-## Steps
 :+1: Download Angular Phonecat
 ```
 $ git clone --depth=14 https://github.com/angular/angular-phonecat.git
@@ -127,3 +121,14 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 >Refresh your browser and verify that it says "Hello, World!".
 
 >__SUMMARY__: You now have a dynamic app that features separate model, view, and controller components
+
+## AngularJS Basics Updated Version
+* Verify Node version
+  ```
+  $ node -v
+  ```
+* For complete tutorial: [AngularJS PhoneCatApp](https://code.angularjs.org/1.2.28/docs/tutorial)
+
+* The project is preconfigured with a number of npm helper scripts to make it easy to run the common tasks that you will need while developing:
+
+```$ npm start : start a local development web-server```
