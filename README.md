@@ -718,7 +718,9 @@ body {
 
 >In the previous step, the details page displayed either "true" or "false" to indicate whether certain phone features were present or not. We have used a custom filter to convert those text strings into glyphs: ✓ for "true", and ✘ for "false". Let's see what the filter code looks like.
 
-![End of Part 6](https://github.com/clydeatuic/angularjsbasics/blob/master/part6.png)
+![End of Part 6](https://github.com/clydeatuic/angularjsbasics/blob/master/part6a.png)
+
+![End of Part 6](https://github.com/clydeatuic/angularjsbasics/blob/master/part6b.png)
 
 :tada: You have already finished sixth part.
 
