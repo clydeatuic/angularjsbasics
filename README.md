@@ -99,7 +99,9 @@ Try adding more static HTML to index.html. For example:
 
 :+1: View and Template. In Angular, the view is a projection of the model through the HTML template. This means that whenever the model changes, Angular refreshes the appropriate binding points, which updates the view.
 
-	The view component is constructed by Angular from this template. ``` app/index.html: ```
+	The view component is constructed by Angular from this template. 
+
+``` app/index.html: ```
     
 ``` html
 <html ng-app="phonecatApp">
