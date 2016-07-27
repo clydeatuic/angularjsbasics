@@ -223,7 +223,8 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 
 :+1: Template. We made the following changes to the index.html template:
 
-```app/index.html:```
+
+``` app/index.html: ```
 
 
 ``` html
@@ -271,7 +272,7 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 :+1: Controller. This is a good time to talk about two-way data-binding. Notice that when the app is loaded in the browser, "Newest" is selected in the drop down menu. This is because we set orderProp to 'age' in the controller. So the binding works in the direction from our model to the UI. Now if you select "Alphabetically" in the drop down menu, the model will be updated as well and the phones will be reordered. That is the data-binding doing its job in the opposite direction — from the UI to the model.
 
 
-```app/js/controllers.js:```
+``` app/js/controllers.js: ```
 
 
 ``` javascript
