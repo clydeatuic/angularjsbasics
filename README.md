@@ -557,6 +557,171 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
 
 :tada: You have already finished fifth part.
 
+## Steps - Part 6
+
+>In this step, you will implement the phone details view, which is displayed when a user clicks on a phone in the phone list. 
+
+:+1: Data. In addition to ```phones.json```, the ```app/phones/``` directory also contains one json file for each phone:
+
+``` app/phones/nexus-s.json: ``` (sample snippet)
+
+``` javascript
+{
+"additionalFeatures": "Contour Display, Near Field Communications (NFC),...",
+"android": {
+    "os": "Android 2.3",
+    "ui": "Android"
+},
+...
+"images": [
+    "img/phones/nexus-s.0.jpg",
+    "img/phones/nexus-s.1.jpg",
+    "img/phones/nexus-s.2.jpg",
+    "img/phones/nexus-s.3.jpg"
+],
+"storage": {
+    "flash": "16384MB",
+    "ram": "512MB"
+}
+}
+```
+
+:+1: Controller. We'll expand the ```PhoneDetailCtrl``` by using the ```$http``` service to fetch the json files. This works the same way as the phone list controller.
+
+``` app/js/controllers.js ```
+
+``` javascript
+var phonecatControllers = angular.module('phonecatControllers', []);
+
+... same code here
+
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    $http.get('phones/' + $routeParams.phoneId + '.json').success(function(data) {
+      $scope.phone = data;
+    });
+  }]);
+```
+
+:+1: Template. The TBD placeholder line has been replaced with lists and bindings that comprise the phone details. Note where we use the Angular ```{{expression}}``` markup and ngRepeat to project phone data from our model into the view.
+
+``` app/partials/phone-detail.html ```
+
+``` html
+<img ng-src="{{phone.images[0]}}" class="phone">
+
+<h1>{{phone.name}}</h1>
+
+<p>{{phone.description}}</p>
+
+<ul class="phone-thumbs">
+  <li ng-repeat="img in phone.images">
+    <img ng-src="{{img}}">
+  </li>
+</ul>
+
+<ul class="specs">
+  <li>
+    <span>Availability and Networks</span>
+    <dl>
+      <dt>Availability</dt>
+      <dd ng-repeat="availability in phone.availability">{{availability}}</dd>
+    </dl>
+  </li>
+    ...
+  <li>
+    <span>Additional Features</span>
+    <dd>{{phone.additionalFeatures}}</dd>
+  </li>
+</ul>
+```
+
+>When you click on a phone on the list, the phone details page with phone-specific information is displayed.
+
++:1+ In this step you will learn how to create your own custom display filter. Custom Filter - In order to create a new filter, you are going to create a phonecatFilters module and register your custom filter with this module:
+
+``` app/js/filters.js: ```
+
+``` javascript
+angular.module('phonecatFilters', []).filter('checkmark', function() {
+return function(input) {
+  return input ? '\u2713' : '\u2718';
+};
+});
+```
+
+:+1: Now that our filter is ready, we need to register the phonecatFilters module as a dependency for our main phonecatApp module.
+
+``` app/js/app.js: ```
+
+``` javascript
+...
+angular.module('phonecatApp', ['ngRoute','phonecatControllers','phonecatFilters']).
+...
+```
+
+:+1: Template. Since the filter code lives in the ```app/js/filters.js``` file, we need to include this file in our layout template.
+
+``` app/index.html: ```
+
+``` html
+...
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+...
+```
+
+>The syntax for using filters in Angular templates is as follows: ```{{ expression | filter }}```
+
+>Let's employ the filter in the phone details template:
+
+``` app/partials/phone-detail.html: ```
+
+``` html
+...
+<dl>
+  <dt>Infrared</dt>
+  <dd>{{phone.connectivity.infrared | checkmark}}</dd>
+  <dt>GPS</dt>
+  <dd>{{phone.connectivity.gps | checkmark}}</dd>
+</dl>
+...
+```
+
+:+1: if you don't have app/css/app.css script. Consider this:
+
+``` app/css/app.css ```
+
+``` css
+body {
+  padding-top: 20px;
+}
+
+.phones {
+  list-style: none;
+}
+
+.phones li {
+  clear: both;
+  height: 115px;
+  padding-top: 15px;
+}
+
+.thumb {
+  float: left;
+  height: 100px;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+  width: 100px;
+}
+```
+
+>In the previous step, the details page displayed either "true" or "false" to indicate whether certain phone features were present or not. We have used a custom filter to convert those text strings into glyphs: ✓ for "true", and ✘ for "false". Let's see what the filter code looks like.
+
+![End of Part 6](https://github.com/clydeatuic/angularjsbasics/blob/master/part6.png)
+
+:tada: You have already finished sixth part.
+
 ## AngularJS Basics Original Link
 * For complete tutorial: [AngularJS PhoneCatApp](https://code.angularjs.org/1.2.28/docs/tutorial)
 
