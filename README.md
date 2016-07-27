@@ -15,13 +15,21 @@ $ node -v
 ```
 $ npm install
 ```
+:+1: You are now ready to build the AngularJS phonecat app. In this step, you will become familiar with the most important source code files, learn how to start the development servers bundled with angular-seed, and run the application in the browser.
+```
+$ git checkout -f step-1
+```
 :+1: Running Development Web Server
 ```
 $ npm start
 ```
 :+1: This will create a local webserver that is listening to port 8000 on your local machine. You can now browse to the application at:
 ```
-http://localhost:8000/app/index.html
+http://localhost:8000
+```
+:+1: Hit CTRL-C to stop the server
+```
+CTRL-C
 ```
 :+1: Navigate to ``` angular-phonecat ``` directory and modify the ``` index.html ```
 ```
@@ -44,6 +52,10 @@ app/index.html:
 
 </body>
 </html>
+```
+:+1: Refresh the browser to update the page and The HTML page that displays ``` Nothing here yet! ``` was constructed with the HTML code shown below. The code contains some key Angular elements that we will need as we progress.
+```
+Nothing here yet! 
 ```
 :+1: Try adding a new expression to the ```index.html``` that will do some math:
 ```
