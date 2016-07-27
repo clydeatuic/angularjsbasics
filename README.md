@@ -147,29 +147,19 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
   ];
 });
 ```
-* Experiments
+:+1: Experiments. Add another binding to index.html. For example: ```<p>Total number of phones: {{phones.length}}</p>```
 
->Add another binding to index.html. For example:
-
-```<p>Total number of phones: {{phones.length}}</p>```
-
->Create a new model property in the controller and bind to it from the template. For example:
+:+1: Create a new model property in the controller and bind to it from the template. For example:
 	
 ```$scope.name = "World";```
 
->Then add a new binding to index.html:
-	
-```<p>Hello, {{name}}!</p>```
+:+1: Then add a new binding to index.html: ```<p>Hello, {{name}}!</p>```
 
->Refresh your browser and verify that it says "Hello, World!".
+:+1: Refresh your browser and verify that it says "Hello, World!".
 
 >__SUMMARY__: You now have a dynamic app that features separate model, view, and controller components
 
-## AngularJS Basics Updated Version
-* Verify Node version
-  ```
-  $ node -v
-  ```
+## AngularJS Basics Original Link
 * For complete tutorial: [AngularJS PhoneCatApp](https://code.angularjs.org/1.2.28/docs/tutorial)
 
 * The project is preconfigured with a number of npm helper scripts to make it easy to run the common tasks that you will need while developing:
