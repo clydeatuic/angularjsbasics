@@ -726,7 +726,21 @@ body {
 
 :tada: You have already finished sixth part.
 
-## Steps - Part 7 & 8 (working...)
+## Steps - Part 7 
+
+>In the previous step,
+
+![End of Part 7](https://github.com/clydeatuic/angularjsbasics/blob/master/part7.png)
+
+:tada: You have already finished part seven.
+
+## Steps - Part 8 
+
+>In the previous step,
+
+![End of Part 8](https://github.com/clydeatuic/angularjsbasics/blob/master/part8.png)
+
+:tada: You have already finished part eight.
 
 ## AngularJS Basics Original Link
 * For complete tutorial: [AngularJS PhoneCatApp](https://code.angularjs.org/1.2.28/docs/tutorial)
