@@ -890,6 +890,7 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$h
 
 >We bound the ```ngSrc``` directive of the large image to the ```mainImageUrl``` property. We also registered an ```ngClick``` handler with thumbnail images. When a user clicks on one of the thumbnail images, the handler will use the ```setImage``` event handler function to change the value of the ```mainImageUrl``` property to the URL of the thumbnail image.
 
+![End of Part 7b](https://github.com/clydeatuic/angularjsbasics/blob/master/part7b.png)
 
 :tada: You have already finished part seven.
 
