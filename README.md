@@ -36,6 +36,7 @@ CTRL-C
 app/index.html:
 ```
 :+1: The HTML page that displays "Nothing here yet!" was constructed with the HTML code shown below. The code contains some key Angular elements that we will need as we progress.
+
 ``` html
 <!doctype html>
 <html lang="en" ng-app>
@@ -68,6 +69,7 @@ Nothing here yet!
 >The page now contains a list with information about two phones.
 	
 ``` app/index.html: ```
+
 ``` html
 <ul>
   <li>
@@ -732,3 +734,6 @@ body {
 * The project is preconfigured with a number of npm helper scripts to make it easy to run the common tasks that you will need while developing:
 
 ```$ npm start : start a local development web-server```
+
+## AngularJS API Reference:
+* The documentation is organized into modules which contain various components of an AngularJS application. These components are directives, services, filters, providers, templates, global APIs, and testing mocks. Link [here](https://code.angularjs.org/1.2.28/docs/api)
