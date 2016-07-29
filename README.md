@@ -182,7 +182,7 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 
 :+1: Template. We added a standard HTML ```<input>``` tag and used Angular's filter function to process the input for the ```ngRepeat``` directive.
 
-```app/index.html:```
+``` app/index.html : ```
 
 ``` html
 <!doctype html>
