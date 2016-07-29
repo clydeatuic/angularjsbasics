@@ -850,6 +850,47 @@ body {
 </ul>
 ```
 
+* In this step, you will add a clickable phone image swapper to the phone details page.
+
+>The phone details view displays one large image of the current phone and several smaller thumbnail images. It would be great if we could replace the large image with any of the thumbnails just by clicking on the desired thumbnail image. Let's have a look at how we can do this with Angular.
+
+>Controller. ``` app/js/controllers.js : ```
+
+``` javascript
+...
+var phonecatControllers = angular.module('phonecatControllers',[]);
+
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    $http.get('phones/' + $routeParams.phoneId + '.json').success(function(data) {
+      $scope.phone = data;
+      $scope.mainImageUrl = data.images[0];
+    });
+
+    $scope.setImage = function(imageUrl) {
+      $scope.mainImageUrl = imageUrl;
+    }
+  }]);
+```
+
+>Template. ``` app/partials/phone-detail.html: ``` 
+
+``` html
+<img ng-src="{{mainImageUrl}}" class="phone">
+
+...
+
+<ul class="phone-thumbs">
+  <li ng-repeat="img in phone.images">
+    <img ng-src="{{img}}" ng-click="setImage(img)">
+  </li>
+</ul>
+...
+```
+
+>We bound the ```ngSrc``` directive of the large image to the ```mainImageUrl``` property. We also registered an ```ngClick``` handler with thumbnail images. When a user clicks on one of the thumbnail images, the handler will use the ```setImage``` event handler function to change the value of the ```mainImageUrl``` property to the URL of the thumbnail image.
+
+
 :tada: You have already finished part seven.
 
 ## Steps - Part 8 
