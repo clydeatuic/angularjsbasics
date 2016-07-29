@@ -728,9 +728,9 @@ body {
 
 ## Steps - Part 7 
 
->In the previous step,
+>In the previous step, we have employed the filter in phone details template. Modify the phone details template and create a page that will look like the image:
 
-![End of Part 7](https://github.com/clydeatuic/angularjsbasics/blob/master/part7.png)
+![End of Part 7](https://github.com/clydeatuic/angularjsbasics/blob/master/part7a.png)
 
 :tada: You have already finished part seven.
 
